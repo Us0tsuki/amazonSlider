@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#top-banner {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1500px; /* limit viewport width with max-width property, saves the use of media query for larger device! */
+  min-width: 1000px; /* if the width get too small, even if centered, the image doesn't show well, in addition most desktop browser more than 1280px*/
+  height: 300px;
+  position: relative;
+}
+
+.banner-sequence {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  overflow: hidden;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: none;
+  overflow: hidden;
+}
+
+.banner > div {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  left: -100%;
+}
+
+.active-banner {
+  display: block;
+}
+
+.banner-link img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.banner-btn {
+  padding: 0;
+  border: 0;
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 300px;
+}
+
+.banner-btn a {
+  position: absolute;
+  z-index: 10; /*if without z-index, the left button will be beneath the banner, since they are all same level absolute positioned element, thus overlay order determined by code sequence.*/
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  outline: 0;
+}
+
+.banner-btn a i {
+  width: 34px;
+  height: 52px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 68px 52px; /* need to shrink the background-image a little bit */
+  background-image: url(../images/icons/AmazonUICarousel-arrows-c495a9b59afd9b35a08c12513d40b8c7e7771499._V2_.png);
+}
+
+.left-switch {
+  left: 0;
+}
+
+.left-switch a i {
+  background-position: 0 0;
+}
+
+
+.right-switch {
+  right: 0;
+}
+
+.right-switch a i {
+  background-position: -34px 0;
+}
+/*carousel 1 ends*/
+
+
+
+/*carousel 2 starts*/
+#top-banner-1 {
+  position: relative;
+  margin: 100px auto;
+  padding: 0;
+  width: 100%;
+  max-width: 1500px;
+  min-width: 1000px;
+  height: 600px;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+#top-baner-1::before {
+  content: "";
+  position: absolute;
+  top: 250px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-180deg, rgba(234,237,237,0), #EAEDED);
+  z-index: 1;
+}
+
+.banner-sequence-1 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 600px;
+  white-space: nowrap; /*nowrap Sequences of white space are collapsed, but suppresses line breaks (text wrapping) within the source. */
+  overflow-x: visible;
+  letter-spacing: -4px; /*as mentioned before the inline-block/inline elements may have space in between even though margin and padding set to 0, which is due to space in actual html,
+                          to solve this, either delete the /s /n in html or set letter-spacing to appropriate minus values. */
+}
+
+.banner-1 {
+  margin: 0;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block; /*key point: inline-block, think float: left; will also be ok*/
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+}
+
+.banner-1 > div {
+  position: absolute;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  left: -100%;
+}
+
+.banner-link-1 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.banner-btn-1 {
+  padding: 0;
+  border: 0;
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 300px;
+}
+
+.banner-btn-1 a {
+  position: absolute;
+  z-index: 10; /*if without z-index, the left button will be beneath the banner, since they are all same level absolute positioned element, thus overlay order determined by code sequence.*/
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  outline: 0;
+}
+
+.banner-btn-1 a i {
+  width: 34px;
+  height: 52px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 68px 52px; /* need to shrink the background-image a little bit */
+  background-image: url(../images/icons/AmazonUICarousel-arrows-c495a9b59afd9b35a08c12513d40b8c7e7771499._V2_.png);
+}
+
+.left-switch-1 {
+  left: 0;
+}
+
+.left-switch-1 a i {
+  background-position: 0 0;
+}
+
+
+.right-switch-1 {
+  right: 0;
+}
+
+.right-switch-1 a i {
+  background-position: -34px 0;
+}
+/*carousel 2 ends*/
+
+/*slide show starts */
+#slideshow {
+  position: relative;
+  width: 1020px;
+  height: 370px;
+  margin: 50px auto;
+  padding: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+#slideshow .slide {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+}
+
+.hiv-wrapper {
+  background-image: url("../images/carousel/poster.jpg");
+}
+.video-button {
+  background-image: url("../images/carousel/video-controls.svg");
+  visibility: hidden;
+}
+
+/****************** Large Devices ********************/
+/*@media (min-width: 1500px) {
+  #top-banner {
+    width: 1500px;
+    margin: 0 auto;
+  }
+
+  #top-banner-1 {
+    width: 1500px;
+    margin: 100px auto;
+  }
+}
+*/
